@@ -35,7 +35,7 @@ body {
 
 }
 .logo {
-    max-height: 90px;
+    max-height: 72px;
     width: auto;
     max-width: 440px;
     margin-bottom: 0;
@@ -640,7 +640,7 @@ color:#0b2f6b;
 }
 .logo{
 
-    max-height:90px;
+    max-height:72px;
     width:auto;
     max-width:440px;
     object-fit:contain;
@@ -722,9 +722,14 @@ color:#0b2f6b;
         max-width: 100%;
         padding: 20px;
     }
+    .top-nav {
+        justify-content: flex-start;
+        padding-left: 10px;
+    }
     .top-nav .logo {
-        max-height: 63px !important;
+        max-height: 50px !important;
         width: auto;
+        margin-left: 0;
     }
     .home {
         display:flex;

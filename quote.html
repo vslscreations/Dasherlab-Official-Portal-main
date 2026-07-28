@@ -78,11 +78,11 @@ Dashboard
 <div class="page-header">
 
 <h1>
-Get Your Quote
+Generate A Quote
 </h1>
 
 <p>
-Let Avery gather your information and prepare an estimate.
+Let Avery gather your route details and generate a courier estimate.
 </p>
 
 </div>
@@ -124,19 +124,19 @@ Step 1 of 4
 
 
 <h2>
-Contact Information
+Facility Contact
 </h2>
 
 
 
 <label>
-Business Name
+Facility Name
 </label>
 
 <input 
 type="text"
-id="quoteCompany"
-placeholder="Business name">
+id="quoteFacility"
+placeholder="Facility name">
 
 
 
@@ -195,36 +195,58 @@ Next →
 
 
 <h2>
-Project Information
+Pickup & Delivery Details
 </h2>
 
 
 
 <label>
-Service Needed
+Pickup Location
 </label>
 
 
-<select id="quoteService">
+<input
+type="text"
+id="quotePickup"
+placeholder="Street address or facility name">
+
+
+<label>
+Delivery Location
+</label>
+
+
+<input
+type="text"
+id="quoteDelivery"
+placeholder="Destination facility">
+
+
+<label>
+Package Type
+</label>
+
+
+<select id="quotePackageType">
 
 <option>
-AI Automation
+Medical Supplies
 </option>
 
 <option>
-Website Development
+Lab Specimen
 </option>
 
 <option>
-Customer Support
+Pharmaceuticals
 </option>
 
 <option>
-Marketing
+Medical Records
 </option>
 
 <option>
-Custom Project
+Diagnostics Equipment
 </option>
 
 
@@ -235,26 +257,26 @@ Custom Project
 
 
 <label>
-Estimated Budget
+Estimated Distance
 </label>
 
 
 <select id="quoteBudget">
 
 <option>
-Under $500
+0 - 10 miles
 </option>
 
 <option>
-$500 - $2,000
+11 - 25 miles
 </option>
 
 <option>
-$2,000 - $5,000
+26 - 50 miles
 </option>
 
 <option>
-$5,000+
+51+ miles
 </option>
 
 
@@ -266,13 +288,13 @@ $5,000+
 
 
 <label>
-Describe Your Project
+Shipment Notes
 </label>
 
 
 <textarea
 id="quoteDescription"
-placeholder="Tell Avery about your project">
+placeholder="Special handling, receiving dock info, or access instructions">
 </textarea>
 
 
@@ -307,13 +329,13 @@ Continue →
 
 
 <h2>
-Timeline & Details
+Schedule & Priority
 </h2>
 
 
 
 <label>
-Preferred Start Date
+Requested Pickup Date
 </label>
 
 
@@ -326,7 +348,7 @@ id="quoteDate">
 
 
 <label>
-Priority Level
+Service Priority
 </label>
 
 
@@ -334,17 +356,17 @@ Priority Level
 
 
 <option>
-Standard
+Routine
 </option>
 
 
 <option>
-High Priority
+Urgent
 </option>
 
 
 <option>
-ASAP
+STAT
 </option>
 
 
@@ -352,6 +374,39 @@ ASAP
 
 
 
+
+
+<label>
+Requested Pickup Time
+</label>
+
+
+<input
+type="time"
+id="quoteTime">
+
+
+<label>
+Number of Stops
+</label>
+
+
+<select id="quoteStops">
+
+<option>
+1 Stop
+</option>
+
+<option>
+2 - 3 Stops
+</option>
+
+<option>
+4+ Stops
+</option>
+
+
+</select>
 
 
 <label>
@@ -396,7 +451,7 @@ Generate Quote →
 
 
 <h2>
-Avery's Estimate
+Avery's Courier Estimate
 </h2>
 
 
@@ -417,7 +472,7 @@ $0
 
 <p>
 <strong>
-Recommended Service:
+Recommended Route:
 </strong>
 
 <span id="quoteResultService"></span>
@@ -456,7 +511,7 @@ Priority:
 
 <p>
 
-This estimate was created by Avery AI.
+This estimate was created by Avery AI for medical courier service.
 
 A final proposal can be reviewed by your team before approval.
 

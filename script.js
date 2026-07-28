@@ -88,7 +88,28 @@ if (
         `;
 
     }
+else if(
+lowerText.includes("pickup") ||
+lowerText.includes("pick up") ||
+lowerText.includes("delivery") ||
+lowerText.includes("request") ||
+lowerText.includes("courier")
+){
 
+    response = `
+    I can help you schedule a pickup request.
+
+    <br><br>
+
+    I’ll guide you through the information we need.
+
+    <br><br>
+
+    <button onclick="location.href='pickup.html'">
+    🚚 Request Pickup
+    </button>
+    `;
+}
 
 else if(
 lowerText.includes("contact") ||

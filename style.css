@@ -722,8 +722,9 @@ color:#0b2f6b;
         max-width: 100%;
         padding: 20px;
     }
-    .logo {
-        max-height: 63px;
+    .top-nav .logo {
+        max-height: 63px !important;
+        width: auto;
     }
     .home {
         display:flex;

@@ -177,54 +177,39 @@
 <main class="pickup-container">
 
 <!-- STEP 1 -->
-
 <div class="form-card" id="step1">
 
-<h2>Contact Information</h2>
+<h2>Pickup Information</h2>
 
 
 <label>
-Business Name
+Pickup Location
 </label>
 
 <input 
-type="text" 
-id="company" 
-placeholder="Business name (optional)">
-
+type="text"
+id="pickupAddress"
+placeholder="Pickup address">
 
 
 <label>
 Contact Name
 </label>
 
-<input 
-type="text" 
-id="contact" 
-placeholder="Your name">
-
-
-
-<label>
-Email Address
-</label>
-
 <input
-type="email"
-id="email"
-placeholder="Email address">
-
+type="text"
+id="contact"
+placeholder="Contact person">
 
 
 <label>
 Phone Number
 </label>
 
-<input 
-type="tel" 
-id="phone" 
-placeholder="Phone number">
-
+<input
+ type="tel"
+ id="phone"
+ placeholder="Phone number">
 
 
 <button class="primary-button" onclick="nextStep(2)">
@@ -233,61 +218,63 @@ Next →
 
 
 </div>
-
-
-
-
-
 <!-- STEP 2 -->
-
 <div class="form-card hidden" id="step2">
 
 
-<h2>How Can We Help?</h2>
-
+<h2>Delivery Details</h2>
 
 
 <label>
-Request Type
+Destination Facility
 </label>
 
-<select id="requestType">
+<input
+ type="text"
+ id="deliveryAddress"
+ placeholder="Delivery location">
 
-<option>General Inquiry</option>
-<option>Schedule an Appointment</option>
-<option>Request a Quote</option>
-<option>Customer Support</option>
-<option>Service Request</option>
+
+<label>
+Package Type
+</label>
+
+<select id="packageType">
+
+<option>
+Medical Supplies
+</option>
+
+<option>
+Lab Specimen
+</option>
+
+<option>
+Documents
+</option>
 
 </select>
 
 
-
-
-
 <label>
-Service Needed
+Priority
 </label>
 
-<input
-type="text"
-id="service"
-placeholder="What service do you need help with?">
+<select id="priority">
 
+<option>
+Routine
+</option>
 
+<option>
+Urgent
+</option>
 
+<option>
+STAT
+</option>
 
-
-<label>
-Describe Your Request
-</label>
-
-<textarea
-id="description"
-placeholder="Tell us how Avery can help">
-</textarea>
-
-
+</select>
 
 
 <button class="secondary-button" onclick="nextStep(1)">
@@ -301,25 +288,15 @@ Continue →
 
 
 </div>
-
-
-
-
-
-
-
 <!-- STEP 3 -->
-
 <div class="form-card hidden" id="step3">
 
 
-<h2>Request Preferences</h2>
-
-
+<h2>Schedule Pickup</h2>
 
 
 <label>
-Preferred Date
+Pickup Date
 </label>
 
 <input 
@@ -327,23 +304,13 @@ type="date"
 id="date">
 
 
-
-
-
 <label>
-Priority Level
+Pickup Time
 </label>
 
-<select id="priority">
-
-<option>Normal</option>
-<option>Urgent</option>
-<option>Low Priority</option>
-
-</select>
-
-
-
+<input
+ type="time"
+ id="time">
 
 
 <label>
@@ -352,9 +319,7 @@ Additional Notes
 
 <textarea 
 id="notes" 
-placeholder="Anything else Avery should know?">
-</textarea>
-
+placeholder="Anything else we should know?"></textarea>
 
 
 
@@ -370,13 +335,6 @@ Review Request →
 
 
 </div>
-
-
-
-
-
-
-
 <!-- STEP 4 -->
 
 <div class="form-card hidden" id="step4">
@@ -390,10 +348,15 @@ Review Request →
 
 
 <p>
-<strong>Business:</strong>
-<span id="reviewCompany"></span>
+<strong>Pickup:</strong>
+<span id="reviewPickup"></span>
 </p>
 
+
+<p>
+<strong>Delivery:</strong>
+<span id="reviewDelivery"></span>
+</p>
 
 
 <p>
@@ -402,47 +365,16 @@ Review Request →
 </p>
 
 
-
-<p>
-<strong>Email:</strong>
-<span id="reviewEmail"></span>
-</p>
-
-
-
 <p>
 <strong>Phone:</strong>
 <span id="reviewPhone"></span>
 </p>
 
 
-
 <p>
-<strong>Request Type:</strong>
-<span id="reviewRequestType"></span>
+<strong>Package Type:</strong>
+<span id="reviewPackage"></span>
 </p>
-
-
-
-<p>
-<strong>Service:</strong>
-<span id="reviewService"></span>
-</p>
-
-
-
-<p>
-<strong>Description:</strong>
-<span id="reviewDescription"></span>
-</p>
-
-
-
-<p>
-<strong>Date:</strong>
-<span id="reviewDate"></span>
-</p>
-
 
 
 <p>
@@ -451,12 +383,22 @@ Review Request →
 </p>
 
 
+<p>
+<strong>Date:</strong>
+<span id="reviewDate"></span>
+</p>
+
+
+<p>
+<strong>Time:</strong>
+<span id="reviewTime"></span>
+</p>
+
 
 <p>
 <strong>Notes:</strong>
 <span id="reviewNotes"></span>
 </p>
-
 
 
 </div>

@@ -288,32 +288,29 @@ function nextStep(step){
     // Populate Review Screen
     if(step === 4){
 
-        document.getElementById("reviewCompany").innerText =
-        document.getElementById("company").value;
+        document.getElementById("reviewPickup").innerText =
+        document.getElementById("pickupAddress").value;
+
+        document.getElementById("reviewDelivery").innerText =
+        document.getElementById("deliveryAddress").value;
 
         document.getElementById("reviewContact").innerText =
         document.getElementById("contact").value;
 
-        document.getElementById("reviewEmail").innerText =
-        document.getElementById("email").value;
-
         document.getElementById("reviewPhone").innerText =
         document.getElementById("phone").value;
 
-        document.getElementById("reviewRequestType").innerText =
-        document.getElementById("requestType").value;
+        document.getElementById("reviewPackage").innerText =
+        document.getElementById("packageType").value;
 
-        document.getElementById("reviewService").innerText =
-        document.getElementById("service").value;
-
-        document.getElementById("reviewDescription").innerText =
-        document.getElementById("description").value;
+        document.getElementById("reviewPriority").innerText =
+        document.getElementById("priority").value;
 
         document.getElementById("reviewDate").innerText =
         document.getElementById("date").value;
 
-        document.getElementById("reviewPriority").innerText =
-        document.getElementById("priority").value;
+        document.getElementById("reviewTime").innerText =
+        document.getElementById("time").value;
 
         document.getElementById("reviewNotes").innerText =
         document.getElementById("notes").value;
@@ -328,40 +325,40 @@ function submitRequest(){
 const request = {
 
 
-company:
-document.getElementById("company").value,
+type:
+"Pickup Request",
+
+
+pickup:
+document.getElementById("pickupAddress").value,
+
+
+delivery:
+document.getElementById("deliveryAddress").value,
 
 
 contact:
 document.getElementById("contact").value,
 
 
-email:
-document.getElementById("email").value,
-
-
 phone:
 document.getElementById("phone").value,
 
 
-requestType:
-document.getElementById("requestType").value,
+packageType:
+document.getElementById("packageType").value,
 
 
-service:
-document.getElementById("service").value,
-
-
-description:
-document.getElementById("description").value,
+priority:
+document.getElementById("priority").value,
 
 
 date:
 document.getElementById("date").value,
 
 
-priority:
-document.getElementById("priority").value,
+time:
+document.getElementById("time").value,
 
 
 notes:
@@ -466,14 +463,20 @@ request.type === "Human Follow-Up"
 
 :
 
-"📋 " + (request.requestType || "Service Request")
+"📋 " + (request.type || "Pickup Request")
 
 }
 
 </h3>
 <p>
-<strong>Business:</strong>
-${request.company || "Individual Customer"}
+<strong>Pickup:</strong>
+${request.pickup}
+</p>
+
+
+<p>
+<strong>Delivery:</strong>
+${request.delivery}
 </p>
 
 
@@ -484,8 +487,14 @@ ${request.contact}
 
 
 <p>
-<strong>Service:</strong>
-${request.service || "Not specified"}
+<strong>Phone:</strong>
+${request.phone}
+</p>
+
+
+<p>
+<strong>Package Type:</strong>
+${request.packageType}
 </p>
 
 ${
